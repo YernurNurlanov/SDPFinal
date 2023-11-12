@@ -1,13 +1,8 @@
-import Decorator.PressingDecorator;
-import FactoryMethod.OffensiveTeamFactory;
-import FactoryMethod.DefensiveTeamFactory;
-import FactoryMethod.Team;
-import Singleton.FootballLeague;
-import Observer.Observer;
-import Observer.LeagueObserver;
-import Strategy.ContextStrategy;
-import Strategy.DefensiveStrategy;
-import Strategy.OffensiveStrategy;
+import Decorator.*;
+import FactoryMethod.*;
+import Singleton.*;
+import Observer.*;
+import Strategy.*;
 import Adapter.*;
 
 import java.util.Objects;
@@ -24,12 +19,11 @@ public class Main {
         if (ans.equals("no")){
             System.exit(0);
         }
-        // Singleton Pattern
         FootballLeague league = FootballLeague.getInstance();
         System.out.println("The league has been established.");
         while (true) {
             while (!Objects.equals(ans, "1") && !ans.equals("2") && !ans.equals("3") && !ans.equals("4") && !ans.equals("5")
-                    && !ans.equals("6") && !ans.equals("7") && !ans.equals("8")) {
+                    && !ans.equals("6") && !ans.equals("7") && !ans.equals("8") && !ans.equals("9")) {
                 System.out.println("""
                         Choose one of these actions:(enter the number)
                         1. Add a offensive team.
@@ -40,7 +34,7 @@ public class Main {
                         6. Delete team.
                         7. Delete subscriber.
                         8. Call trainer assistant for translating.
-                        9. Exit""");
+                        9. Exit.""");
                 ans = sc.nextLine();
             }
             switch (ans) {
