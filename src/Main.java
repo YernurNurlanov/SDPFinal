@@ -8,6 +8,7 @@ import Observer.LeagueObserver;
 import Strategy.ContextStrategy;
 import Strategy.DefensiveStrategy;
 import Strategy.OffensiveStrategy;
+import Adapter.*;
 
 import java.util.Objects;
 import java.util.Scanner;
@@ -38,7 +39,8 @@ public class Main {
                         5. List of subscribers.
                         6. Delete team.
                         7. Delete subscriber.
-                        8. Quit.""");
+                        8. Call trainer assistant for translating.
+                        9. Exit""");
                 ans = sc.nextLine();
             }
             switch (ans) {
@@ -160,7 +162,20 @@ public class Main {
                     System.out.println("Subscriber has been removed");
                     ans = "";
                 }
-                case "8" -> System.exit(0);
+                case "8" -> {
+                    russianTeam team = new russianTeam();
+                    Trainer trainer = new Trainer();
+
+                    TrainerHelperAdapter trainerAdapter = new TrainerHelperAdapter(team);
+
+                    trainer.offensiveEnglish();
+                    trainerAdapter.offensiveEnglish();
+                    System.out.println("---------------------------------");
+                    trainer.defensiveEnglish();
+                    trainerAdapter.defensiveEnglish();
+                    ans = "";
+                }
+                case "9" -> System.exit(0);
             }
         }
     }

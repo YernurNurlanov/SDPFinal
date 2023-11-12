@@ -1,6 +1,6 @@
 package Adapter;
 
-public class Team {
+public class russianTeam {
     public void offensiveRussian(){
         System.out.println("Смещаемся в атаку!");
     }
