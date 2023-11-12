@@ -9,6 +9,7 @@ The idea behind TeamPlay Dynamics is to create an easy-to-use platform that simp
 # Purpose of the Work:
 The purpose of this project is to make football team management more accessible and enjoyable. Whether it's for a professional coach or a hobbyist, TeamPlay Dynamics aims to provide valuable insights into team dynamics and strategy effectiveness.
 
+
 # Objectives of the Work:
 * User-Friendly Team Customization: Allow users to easily create and modify teams according to their preferences.
 * Interactive Strategy Testing: Enable users to try out various strategies and see how they might affect a team's performance in a fun, interactive way.
