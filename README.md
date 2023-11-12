@@ -1,4 +1,8 @@
-# SDPFinal
+# Name of final project: Football League
+# Group: SE-2216
+# Team members: Yernur Nurlanov, Angsat Ydrys.
+# Project Overview:
+# Main body:
 ## Strategy Pattern
 ### Context
 
@@ -75,9 +79,14 @@ public void update(String message) {
 ## Adapter Strategy
 ## Factory Method
 ### Creator
+The Creator is the TeamFactory interface. Interface has createProduct() method:
+```
 
+```
 ### Concrete Creator
 
 ### Product
 
 ### Concrete Product
+
+# Conclusion:
