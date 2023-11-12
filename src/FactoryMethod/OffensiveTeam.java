@@ -2,8 +2,8 @@ package FactoryMethod;
 import Strategy.FootballStrategy;
 public class OffensiveTeam implements Team {
     private final String name;
-    FootballStrategy strategy;
-    public OffensiveTeam(String name, FootballStrategy strategy){
+    String strategy;
+    public OffensiveTeam(String name, String strategy){
         this.name = name;
         this.strategy = strategy;
     }
@@ -11,6 +11,6 @@ public class OffensiveTeam implements Team {
         return name;
     }
     public String strategy() {
-        return strategy.play();
+        return strategy;
     }
 }

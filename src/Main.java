@@ -5,8 +5,8 @@ import FactoryMethod.Team;
 import Singleton.FootballLeague;
 import Observer.Observer;
 import Observer.LeagueObserver;
+import Strategy.ContextStrategy;
 import Strategy.DefensiveStrategy;
-import Strategy.FootballStrategy;
 import Strategy.OffensiveStrategy;
 
 import java.util.Objects;
@@ -56,16 +56,19 @@ public class Main {
                         }
                     } while (teamExists);
                     OffensiveTeamFactory teamFactory = new OffensiveTeamFactory();
-                    FootballStrategy strategy = new OffensiveStrategy();
+                    ContextStrategy context = new ContextStrategy();
                     while (!Objects.equals(ans, "yes") && !ans.equals("no")) {
                         System.out.println("Do you want this team to play with pressing? Yes/No");
                         ans = sc.nextLine();
                         ans = ans.toLowerCase();
                     }
                     if (ans.equals("yes")) {
-                        strategy = new PressingDecorator(strategy);
+                        context.setStrategy(new PressingDecorator(new OffensiveStrategy()));
                     }
-                    Team team = teamFactory.createTeam(name, strategy);
+                    else {
+                        context.setStrategy(new OffensiveStrategy());
+                    }
+                    Team team = teamFactory.createTeam(name, context.getStrategy());
                     league.addTeam(team);
                     System.out.println("Team " + name + " has been added");
                 }
@@ -83,16 +86,19 @@ public class Main {
                         }
                     } while (teamExists);
                     DefensiveTeamFactory teamFactory = new DefensiveTeamFactory();
-                    FootballStrategy strategy = new DefensiveStrategy();
+                    ContextStrategy context = new ContextStrategy();
                     while (!Objects.equals(ans, "yes") && !ans.equals("no")) {
                         System.out.println("Do you want this team to play with pressing? Yes/No");
                         ans = sc.nextLine();
                         ans = ans.toLowerCase();
                     }
                     if (ans.equals("yes")) {
-                        strategy = new PressingDecorator(strategy);
+                        context.setStrategy(new PressingDecorator(new DefensiveStrategy()));
                     }
-                    Team team = teamFactory.createTeam(name, strategy);
+                    else {
+                        context.setStrategy(new DefensiveStrategy());
+                    }
+                    Team team = teamFactory.createTeam(name, context.getStrategy());
                     league.addTeam(team);
                     System.out.println("Team " + name + " has been added");
                 }
