@@ -1,7 +1,7 @@
 package FactoryMethod;
-import Strategy.DefensiveStrategy;
-public class DefensiveTeamFactory {
-    public Team createTeam(String name){
-        return new OffensiveTeam(name, new DefensiveStrategy());
+
+public class DefensiveTeamFactory implements TeamFactory{
+    public Team createTeam(String name, String strategy){
+        return new DefensiveTeam(name, strategy);
     }
 }

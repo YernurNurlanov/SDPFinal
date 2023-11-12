@@ -1,4 +1,4 @@
 package FactoryMethod;
 public interface TeamFactory {
-    Team createTeam(String name, Object strategy);
+    Team createTeam(String name, String strategy);
 }
