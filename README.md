@@ -7,7 +7,8 @@ TeamPlay Dynamics is a user-friendly software designed to enhance the experience
 The idea behind TeamPlay Dynamics is to create an easy-to-use platform that simplifies the complexities of football team management. It allows users to create teams, experiment with different strategies, and see how these choices play out in simulated scenarios.
 
 # Purpose of the Work:
-The purpose of this project is to make football team management more accessible and enjoyable. Whether it's for a professional coach or a hobbyist, TeamPlay Dynamics aims to provide valuable insights into team dynamics and strategy effectiveness.
+The purpose of this project is to make football team management more accessible and enjoyable. Whether it's for a professional coach or a hobbyist, TeamPlay Dynamics aims to provide valuable insights into team dynamics and strategy effectiveness.![image](https://github.com/YernurNurlanov/SDPFinal/assets/100417968/ae08b63a-7d5c-4735-875d-627984396bf5)
+
 
 # Objectives of the Work:
 * User-Friendly Team Customization: Allow users to easily create and modify teams according to their preferences.
