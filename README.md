@@ -15,33 +15,33 @@ The purpose of this project is to make football team management more accessible 
 * Engaging Updates and Alerts: Keep users informed and engaged with real-time updates and notifications about team and league activities.
 * Simple Yet Effective Design: Ensure that the software is not only easy to use but also robust enough to handle various team and league management tasks.
 # Main body:
+
 ## Strategy Pattern
 
 #### Files
+- `ContextStrategy.java`
 - `DefensiveStrategy.java`
 - `OffensiveStrategy.java`
-- `FootballStrategy.java`
+- `FootballStrategy.java` (Interface)
 
 #### Description
-The Strategy pattern is employed to enable dynamic changes in the behavior of objects at runtime. It's particularly useful in scenarios where multiple algorithms or strategies might be chosen depending on the context. In TeamPlay Dynamics, this pattern allows teams to switch between different styles of play, such as offensive and defensive.
+In TeamPlay Dynamics, the Strategy pattern enables the dynamic selection of gameplay strategies. This pattern decouples the strategic decision-making process from the specific strategies, allowing for flexible changes during a game.
 
 #### Implementation in Project
-- **`FootballStrategy` Interface**: Defines the `play()` method to be implemented by different strategies.
-- **`DefensiveStrategy` Class**: Implements the `FootballStrategy` interface, encapsulating the defensive style of play.
-- **`OffensiveStrategy` Class**: Implements the same interface, representing an offensive approach to the game.
+- **`FootballStrategy` Interface**: The core of the strategy pattern, defining the `play()` method.
+- **`DefensiveStrategy` and `OffensiveStrategy` Classes**: Concrete implementations of the `FootballStrategy`, each offering a unique approach to playing football.
+- **`ContextStrategy` Class**: Manages the current strategy and provides a method to set and execute the chosen strategy.
 
 #### Usage
-- Teams or individual players can use these strategies to adapt their gameplay according to various situations on the field.
-- By changing the strategy object, teams can shift their playing style seamlessly during a game.
+- Allows a football team to adapt its playing style in real-time, switching between offensive and defensive tactics as the game evolves.
+- Enhances flexibility and adaptability on the field.
 
 #### Benefit
-This pattern provides a high level of flexibility in decision-making processes on the field, enabling teams to alter their tactics based on real-time game dynamics without the need to modify the core team/player classes.
+The Strategy pattern introduces a significant level of flexibility in tactical decision-making. It allows teams to alter their approach seamlessly without changing the team's core functioning or structure.
 
 #### Example
-- A team's strategy can be set to either `DefensiveStrategy` or `OffensiveStrategy`.
-- Calling the `play()` method on the current strategy executes the corresponding behavior (defensive or offensive play).
+- The team can adjust its strategy from defensive to offensive or vice versa by simply changing the strategy in the `ContextStrategy` object and then executing the `getStrategy()` method.
 
-    }
 
 
 ## Factory Method Pattern
@@ -55,23 +55,23 @@ This pattern provides a high level of flexibility in decision-making processes o
 - `TeamFactory.java` (Interface)
 
 #### Description
-The Factory Method pattern in TeamPlay Dynamics is utilized for creating objects — in this case, football teams with specific strategies. This pattern defines an interface for creating an object but allows subclasses to change the type of objects that will be created.
+The Factory Method pattern in TeamPlay Dynamics is crucial for the creation of football teams with distinct strategies. It defines a standard interface for creating objects while allowing for flexibility in the actual objects being created.
 
 #### Implementation in Project
-- **`Team` Interface**: Outlines the basic structure and functionalities of a team.
-- **`DefensiveTeam` and `OffensiveTeam` Classes**: Concrete implementations of the `Team` interface, each equipped with a specific playing strategy.
-- **`DefensiveTeamFactory` and `OffensiveTeamFactory` Classes**: These classes encapsulate the logic for creating specific types of teams (defensive or offensive) with relevant strategies.
+- **`Team` Interface**: Outlines the structure and functionalities expected of a team.
+- **`DefensiveTeam` and `OffensiveTeam` Classes**: Concrete implementations of the `Team` interface, tailored for specific playing styles.
+- **`DefensiveTeamFactory` and `OffensiveTeamFactory` Classes**: These factories handle the creation of defensive and offensive teams, respectively.
 
 #### Usage
-- This pattern allows for the creation of teams with different strategies, such as defensive or offensive, without the client code needing to know the specifics of team creation.
-- It provides a flexible framework for managing team creation, making the system easy to extend with new types of teams or strategies.
+- Facilitates the dynamic creation of teams with specified strategies, keeping the creation process consistent yet customizable.
+- Enhances the system's ability to grow and adapt to new types of teams or strategies.
 
 #### Benefit
-The Factory Method pattern enhances the system's scalability and maintainability. It allows for easy introduction of new team types or strategies, adhering to the open/closed principle and ensuring that existing code does not need to be modified to accommodate new features.
+The Factory Method pattern improves the code's scalability and maintainability by centralizing team creation and allowing for future expansions without significant changes to the existing codebase.
 
 #### Example
-- When a defensive team is required, `DefensiveTeamFactory` is used to create an instance of `DefensiveTeam` with a defensive playing strategy.
-- Similarly, `OffensiveTeamFactory` is used to create `OffensiveTeam` instances for teams that prefer an offensive approach.
+- When a specific type of team is required, the corresponding factory (`DefensiveTeamFactory` or `OffensiveTeamFactory`) is used to instantiate it with the desired strategy.
+
 
 
 ## Observer Pattern
