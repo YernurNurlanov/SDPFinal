@@ -80,6 +80,7 @@ The Factory Method pattern improves the code's scalability and maintainability b
 #### Files
 - `LeagueObserver.java`
 - `Observer.java`
+- `FootballLeague.java`(Singleton folder)
 
 #### Description
 The Observer pattern is used in TeamPlay Dynamics to establish a one-to-many relationship between the `FootballLeague` (the subject) and various observers. It allows for efficient notification of changes in the league to all subscribed observers, such as league updates.
@@ -87,6 +88,7 @@ The Observer pattern is used in TeamPlay Dynamics to establish a one-to-many rel
 #### Implementation in Project
 - **`Observer` Interface**: Outlines the contract for observers, primarily the `update(String message)` method, which is called when the subject's state changes.
 - **`LeagueObserver` Class**: Implements the `Observer` interface and represents an observer in the football league context. It receives and processes notifications from the `FootballLeague`.
+- **`FootballLeague` Class**: This class can add, remove, notify observers. And class has observers list.
 
 #### Usage
 - The pattern enables `LeagueObserver` instances to receive real-time updates from the `FootballLeague` whenever a significant event occurs, like the addition of a new team.
@@ -129,6 +131,9 @@ The Singleton pattern is crucial for maintaining a single, consistent state of t
 ## Decorator Pattern
 
 #### Files
+- `DefensiveStrategy.java` (Strategy folder)
+- `OffensiveStrategy.java` (Strategy folder)
+- `FootballStrategy.java` (Interface) (Strategy folder)
 - `PressingDecorator.java`
 - `StrategyDecorator.java`
 
@@ -136,6 +141,8 @@ The Singleton pattern is crucial for maintaining a single, consistent state of t
 The Decorator pattern in TeamPlay Dynamics is used to dynamically add new behaviors to objects without changing their original class. This pattern is particularly effective in enhancing existing strategies with additional characteristics, such as pressing, in a football game context.
 
 #### Implementation in Project
+- **`FootballStrategy` Interface**: The core of the strategy pattern, defining the `play()` method.
+- **`DefensiveStrategy` and `OffensiveStrategy` Classes**: Concrete implementations of the `FootballStrategy`, each offering a unique approach to playing football.
 - **`StrategyDecorator` (Abstract Class)**: Implements the `FootballStrategy` interface and contains a reference to a `FootballStrategy` object. This class serves as the base for further extensions.
 - **`PressingDecorator` Class**: Extends `StrategyDecorator`, enhancing the base strategy with pressing behavior. It overrides the `play()` method to add "with pressing" to the strategy's action.
 
