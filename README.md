@@ -43,6 +43,8 @@ The Strategy pattern introduces a significant level of flexibility in tactical d
 #### Example
 - The team can adjust its strategy from defensive to offensive or vice versa by simply changing the strategy in the `ContextStrategy` object and then executing the `getStrategy()` method.
 
+![Image alt](https://github.com/YernurNurlanov/SDPFinal/blob/master/src/Strategy/StrategyDiagram.png)
+
 
 
 ## Factory Method Pattern
@@ -126,6 +128,7 @@ The Singleton pattern is crucial for maintaining a single, consistent state of t
 - To access the league and perform operations like adding a team or an observer, the `FootballLeague.getInstance()` method is used. This ensures all interactions are with the same league instance.
 - When a new team is added using `addTeam(Team team)`, all observers are notified through the `notifyObservers(String message)` method, demonstrating the centralized management of the league.
 
+![Image alt](https://github.com/YernurNurlanov/SDPFinal/blob/master/src/Singleton/SingletonDiagram.png)
 
 
 ## Decorator Pattern
@@ -156,6 +159,8 @@ The Decorator pattern offers a flexible approach to modifying object behavior. I
 #### Example
 - A football team using an `OffensiveStrategy` can wrap it with `PressingDecorator` to apply an aggressive pressing style while maintaining the underlying offensive approach.
 - When the `play()` method is called on the decorated strategy, it executes both the offensive play and pressing behaviors.
+
+![Image alt](https://github.com/YernurNurlanov/SDPFinal/blob/master/src/Decorator/DecoratorDiagram.png)
 
 
 ## Adapter Pattern
