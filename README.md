@@ -75,6 +75,7 @@ The Factory Method pattern improves the code's scalability and maintainability b
 #### Example
 - When a specific type of team is required, the corresponding factory (`DefensiveTeamFactory` or `OffensiveTeamFactory`) is used to instantiate it with the desired strategy.
 
+![Image alt](https://github.com/YernurNurlanov/SDPFinal/blob/master/src/FactoryMethod/FactoryMethodDiagram.png)
 
 
 ## Observer Pattern
@@ -102,7 +103,7 @@ The Observer pattern ensures that changes in the league's state are efficiently 
 #### Example
 - When the `FootballLeague` adds a new team, it triggers a notification process where all the subscribed `LeagueObserver` instances are informed of this addition through their `update` method.
 
-![Image alt](https://github.com/YernurNurlanov/SDPFinal/blob/master/src/Strategy/StrategyDiagram.png)
+![Image alt](https://github.com/YernurNurlanov/SDPFinal/blob/master/src/Observer/ObserverDiagram.png)
 
 
 ## Singleton Pattern
