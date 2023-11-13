@@ -188,7 +188,7 @@ The Adapter pattern is used to allow two incompatible interfaces to work togethe
 
 #### Benefit
 This approach allows the `Team` to be controlled by a `Trainer` interface, regardless of the language difference, making the system flexible and adaptable to different languages and command styles.
-
+![Image alt](https://github.com/YernurNurlanov/SDPFinal/blob/master/src/Adapter/AdapterDiagram.png)
 
 ## Conclusion
 
